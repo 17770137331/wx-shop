@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "searchInput": "../../components/search/searchInput",
+    "tables": "../../components/Tables/tables"
+  },
+  "navigationBarTitleText": "商品列表",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

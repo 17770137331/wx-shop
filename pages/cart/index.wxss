@@ -1,0 +1,107 @@
+.cart .button {
+  padding: 20rpx 0;
+}
+.address {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.gouWuChe .text {
+  color: red;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  padding: 20rpx;
+  font-size: 40rpx;
+}
+.gouWuChe .wuPing {
+  display: flex;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #666;
+}
+.gouWuChe .wuPing .xuanzhe {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.gouWuChe .wuPing .image {
+  flex: 2;
+}
+.gouWuChe .wuPing .wenzhi {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 20rpx;
+}
+.gouWuChe .wuPing .wenzhi .top {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.gouWuChe .wuPing .wenzhi .bottom {
+  display: flex;
+}
+.gouWuChe .wuPing .wenzhi .bottom .left {
+  flex: 3;
+  color: red;
+  font-size: 35rpx;
+}
+.gouWuChe .wuPing .wenzhi .bottom .right {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.gouWuChe .wuPing .wenzhi .bottom .right view {
+  width: 55rpx;
+  height: 55rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 51rpx;
+}
+.gouWuChe .wuPing .wenzhi .bottom .right .text2 {
+  border: none;
+}
+.bottomNav {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 1rpx solid #ccc;
+  padding: 0 0 0 10rpx;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+.bottomNav .nav-quanxuan {
+  flex: 2;
+}
+.bottomNav .nav-heji {
+  padding-right: 10rpx;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  flex: 5;
+}
+.bottomNav .nav-heji .top {
+  display: flex;
+}
+.bottomNav .nav-heji .top .left {
+  display: flex;
+  align-items: center;
+}
+.bottomNav .nav-heji .top .right {
+  color: red;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.bottomNav .nav-jiesuan {
+  flex: 3;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+  background-color: #EB4450;
+}

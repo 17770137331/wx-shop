@@ -1,0 +1,93 @@
+<view class="cart" wx:if="{{!address.userName}}">
+    <view class="button">
+        <button bindtap = "handle" type="primary"  plain>获取收货地址</button>
+    </view>
+</view>
+
+<view class="address" wx:else>
+  <view class="left">
+    <view>{{address.userName}}</view>
+    <view>{{address.all}}</view>
+  </view>
+  <view class="right">
+  {{address.telNumber}}
+  </view>
+</view>
+
+
+
+<!-- 购物车 -->
+<view class="gouWuChe">
+    <view class="text">
+        购物车
+    </view>
+    <block>
+      <block wx:if="{{cart.length===0}}">
+        <image mode="widthFix" src="http://hbimg.b0.upaiyun.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" ></image>
+      </block>
+      <view class="wuPing" wx:for="{{cart}}" wx:key="*this">
+        <!-- 复选框 -->
+        <view class="xuanzhe">
+            <checkbox-group bindchange="fn">
+                <checkbox checked="{{item.message.checked}}" bindtap="danxuan" data-value="{{item.message.goods_id}}">
+                </checkbox>
+            </checkbox-group>   
+        </view>
+        <!-- 图片 -->
+        <navigator class="image" target="" url="" hover-class="navigator-hover" open-type="navigate">
+            <image class="" src="{{item.message.goods_small_logo?item.message.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
+            </image>
+        </navigator>
+        <!-- 文字 -->
+        <view class="wenzhi" hover-class="none" hover-stop-propagation="false">
+            <view class="top" hover-class="none" hover-stop-propagation="false">
+                {{item.message.goods_name}}
+            </view>
+            <view class="bottom" hover-class="none" hover-stop-propagation="false">
+                <view class="left" hover-class="none" hover-stop-propagation="false">
+                    ￥{{item.message.goods_price}}
+                </view>
+                <view class="right" hover-class="none" hover-stop-propagation="false">
+                    <view bindtap="reduce" data-value="{{item.message.goods_id}}">
+                        -
+                    </view>
+                    <view class="text2" selectable="false" space="false" decode="false">{{item.message.num}}</view>
+                    <view bindtap="add" data-value="{{item.message.goods_id}}">
+                        +
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+    </block>
+  
+</view>
+
+<!-- 底部工具栏 -->
+<view class="bottomNav" hover-class="none" hover-stop-propagation="false">
+    <!-- 全选 -->
+    <view class="nav-quanxuan" hover-class="none" hover-stop-propagation="false">
+        <checkbox-group bindchange="quanxuan">
+            <checkbox checked="{{allCheck}}">
+            </checkbox>全选
+        </checkbox-group>   
+    </view>
+    <!-- 合计 -->
+    <view class="nav-heji" hover-class="none" hover-stop-propagation="false">
+        <view class="top" hover-class="none" hover-stop-propagation="false">
+            <view class="left" selectable="false" space="false" decode="false">
+                合计：    
+            </view>
+            <view class="right" selectable="false" space="false" decode="false">
+                ￥{{allPrice}}
+            </view>
+        </view>
+        <view class="bottom" hover-class="none" hover-stop-propagation="false">
+            包含运费
+        </view>
+    </view>
+    <!-- 结算 -->
+    <view class="nav-jiesuan" hover-class="none" hover-stop-propagation="false" bindtap="handleClearn">
+        结算({{allCount}})
+    </view>
+</view>

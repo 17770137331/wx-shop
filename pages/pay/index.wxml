@@ -1,0 +1,70 @@
+<view class="cart" wx:if="{{!address.userName}}">
+    <view class="button">
+        <button bindtap = "handle" type="primary"  plain>获取收货地址</button>
+    </view>
+</view>
+
+<view class="address" wx:else>
+  <view class="left">
+    <view>{{address.userName}}</view>
+    <view>{{address.all}}</view>
+  </view>
+  <view class="right">
+  {{address.telNumber}}
+  </view>
+</view>
+
+
+
+<!-- 购物车 -->
+<view class="gouWuChe">
+    <view class="text">
+        购物车
+    </view>
+    <block>
+      <view class="wuPing" wx:for="{{cart}}" wx:key="*this">
+        <!-- 图片 -->
+        <navigator class="image" target="" url="" hover-class="navigator-hover" open-type="navigate">
+            <image class="" src="{{item.message.goods_small_logo?item.message.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
+            </image>
+        </navigator>
+        <!-- 文字 -->
+        <view class="wenzhi" hover-class="none" hover-stop-propagation="false">
+            <view class="top" hover-class="none" hover-stop-propagation="false">
+                {{item.message.goods_name}}
+            </view>
+            <view class="bottom" hover-class="none" hover-stop-propagation="false">
+                <view class="left" hover-class="none" hover-stop-propagation="false">
+                    ￥{{item.message.goods_price}}
+                </view>
+                <view class="right" hover-class="none" hover-stop-propagation="false">
+                    <view class="text2" selectable="false" space="false" decode="false">X{{item.message.num}}</view>
+                </view>
+            </view>
+        </view>
+      </view>
+    </block>
+  
+</view>
+
+<!-- 底部工具栏 -->
+<view class="bottomNav" hover-class="none" hover-stop-propagation="false">
+    <!-- 合计 -->
+    <view class="nav-heji" hover-class="none" hover-stop-propagation="false">
+        <view class="top" hover-class="none" hover-stop-propagation="false">
+            <view class="left" selectable="false" space="false" decode="false">
+                合计：    
+            </view>
+            <view class="right" selectable="false" space="false" decode="false">
+                ￥{{allPrice}}
+            </view>
+        </view>
+        <view class="bottom" hover-class="none" hover-stop-propagation="false">
+            包含运费
+        </view>
+    </view>
+    <!-- 结算 -->
+    <view class="nav-jiesuan" hover-class="none" hover-stop-propagation="false" bindtap="handleClearn">
+        支付({{allCount}})
+    </view>
+</view>
